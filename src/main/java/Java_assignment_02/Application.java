@@ -5,35 +5,39 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
+        VnExpressArticleService vnExpressArticleService = new VnExpressArticleService();
+        ArticleController articleController = new ArticleController();
         ArrayList<Article> articles = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
-        while(true) {
-            System.out.println("Enter your choice");
-            System.out.println("1.Crawl data from vnExpress page");
-            System.out.println("2.Crawl date from my page");
-            System.out.println("3. Show all articles");
-            System.out.println("4. Exit");
-
-            switch(choice) {
-                case 1:
-                    System.out.println("01");
-                    break;
-                case 2:
-                    System.out.println("02");
-                    break;
-                case 3:
-                    System.out.println("03");
-                    break;
-                case 4:
-                    break;
-                default:
-                    System.out.println("invalid choice");
-            }
+        while (true) {
+            System.out.println("---------------------------------------");
+            System.out.println("Please enter your choice: ");
+            System.out.println("1. Crawl information from VNExpress.");
+            System.out.println("2. Crawl information from my source");
+            System.out.println("3. Display");
+            System.out.println("4. Exit the program");
+            System.out.println("---------------------------------------");
+            int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                articleController.getLinksFromVnExpress(vnExpressArticleService,"https://vnexpress.net/the-gioi");
+                break;
+            case 2:
+                System.out.println("vl");
+                break;
+            case 3:
+                System.out.println("lmao");
+                break;
+            case 4:
+                System.out.println("Thank you for using our program");
+                System.out.println("Closing Program");
+                System.exit(1);
+                break;
+            default:
+                System.out.println("Invalid Choice");
+                break;
         }
-
-
-
+        }
     }
 }
 
