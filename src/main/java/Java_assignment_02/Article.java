@@ -12,10 +12,16 @@ public class Article  {
     private String thumbnail;
     private LocalDate createdAt;
     private LocalDate updatedAt;
-    private LocalDate deleteAt;
+    private static LocalDate deleteAt;
     private int status;
 
-    
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
 
     public Article() {}
 
@@ -80,7 +86,7 @@ public class Article  {
         this.updatedAt = updatedAt;
     }
 
-    public LocalDate getDeleteAt() {
+    public static LocalDate getDeleteAt() {
         return deleteAt;
     }
 

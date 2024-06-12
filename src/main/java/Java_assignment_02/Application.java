@@ -27,8 +27,26 @@ public class Application {
                 articleController.getLinks(myArticleService, "https://vnexpress.net/doi-song");
                 break;
             case 3:
-                System.out.println("List");
-                break;
+                while (true){
+                    System.out.println("Please enter your choice: ");
+                    System.out.println("1. Display all information .");
+                    System.out.println("2. Display information based on URL .");
+                    System.out.println("3.Exit the program");
+                    int selection = scanner.nextInt();
+                    switch(selection){
+                        case 1:
+                            System.out.println("find all");
+                            break;
+                        case 2:
+                            System.out.println("find information based on URL");
+                            break;
+                        case 3:
+                            System.out.println("Exit the program");
+                            System.exit(1);
+                            break;
+                    }
+                    break;
+                }
             case 4:
                 System.out.println("Thank you for using our program");
                 System.out.println("Closing Program");
