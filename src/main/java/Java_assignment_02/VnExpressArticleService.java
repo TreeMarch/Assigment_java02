@@ -33,9 +33,8 @@ public class VnExpressArticleService implements ArticleService{
     @Override
     public Article getArticle(String url) {
         // Document - DOM
-        Document doc = null;
         try {
-            doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).get();
             String title = doc.select("h1.title-detail").text();
             String description = doc.select("p.description").text();
             String content = doc.select("article.fck_detail p.Normal").text();
