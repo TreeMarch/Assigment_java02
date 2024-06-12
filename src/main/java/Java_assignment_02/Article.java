@@ -1,8 +1,9 @@
 package Java_assignment_02;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Article {
+public class Article  {
     private long id ;
     private String baseUrl;
     private String title ;
@@ -66,9 +67,6 @@ public class Article {
         this.thumbnail = thumbnail;
     }
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
 
     public void setCreatedAt() {
         this.createdAt = createdAt;

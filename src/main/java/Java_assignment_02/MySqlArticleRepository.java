@@ -25,15 +25,14 @@ public class MySqlArticleRepository implements ArticleRepository {
     @Override
     public Article save(Article article) {
         try (Connection conn = DriverManager.getConnection(MYSQL_CONNECTION, MYSQL_USER, MYSQL_PASSWORD)) {
-            String sql = "INSERT INTO article_crawler (base_url, title, description, content,thumbnail,created_at,status) VALUES (?, ?, ?, ?, ? , ? ,1)";
+            String sql = "INSERT INTO article_crawler (base_url, title, description, content,thumbnail,status) VALUES (?, ?, ?, ?, ? ,1)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, article.getBaseUrl());
             ps.setString(2, article.getTitle());
             ps.setString(3, article.getDescription());
             ps.setString(4, article.getContent());
             ps.setString(5, article.getThumbnail());
-//            ps.setString(6, article.getCreatedAt());
-//            ps.executeUpdate();
+//            ps.setInt(6, article.getCreatedAt());
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -3,7 +3,7 @@ package Java_assignment_02;
 import java.util.ArrayList;
 
 public class ArticleController  {
-    public void getLinksFromVnExpress(ArticleService articleService, String url) {
+    public void getLinks(ArticleService articleService, String url) {
 
         MySqlArticleRepository mySqlArticleRepository = new MySqlArticleRepository();
         ArrayList<String> getLinks = articleService.getLinks(url);
@@ -13,4 +13,5 @@ public class ArticleController  {
             mySqlArticleRepository.save(article);
         }
     }
+
 }
